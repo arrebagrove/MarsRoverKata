@@ -1,0 +1,4 @@
+packages/
+Tests/obj/Debug/*
+MarsRover/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+*/bin/*
