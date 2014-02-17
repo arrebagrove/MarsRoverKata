@@ -8,6 +8,10 @@ namespace MarsRover.Implementations
 {
     public class Position : BasePosition, IPosition
     {
+        public Position(int xCoordinate, int yCoordinate, CompassDirection direction):base(xCoordinate,yCoordinate,direction)
+        {
+        }
+
         public override string ToString()
         {
             return string.Format("{0},{1},{2}", Xcoordinate, Ycoordinate, Direction.ToString());

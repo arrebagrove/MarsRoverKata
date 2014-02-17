@@ -10,11 +10,13 @@ namespace Tests
     [TestFixture]
     public class PositionTest
     {
-        [TestCase(0,0,"N")]
-        public void PositionToStringFormat(int xCoordinate, int yCoordinate, string faceDirection)
+        [TestCase(0,0,"N", "0,0,N")]
+        public void PositionToStringFormat(int xCoordinate, int yCoordinate, string faceDirection, string expected)
         {
             CompassDirection direction = DirectionFactory().Get(faceDirection);
             IPosition position = new Position(xCoordinate, yCoordinate, faceDirection);
+
+            Assert.That(position.ToString(), Is.EqualTo(expected));
         }
     }
 }
