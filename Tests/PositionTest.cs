@@ -14,7 +14,7 @@ namespace Tests
         public void PositionToStringFormat(int xCoordinate, int yCoordinate, string faceDirection, string expected)
         {
             CompassDirection direction = DirectionFactory().Get(faceDirection);
-            IPosition position = new Position(xCoordinate, yCoordinate, faceDirection);
+            IPosition position = new Position(xCoordinate, yCoordinate, direction);
 
             Assert.That(position.ToString(), Is.EqualTo(expected));
         }
