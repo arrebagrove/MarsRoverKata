@@ -9,6 +9,6 @@ namespace MarsRover.Contracts
     {
         int Xcoordinate { get; }
         int Ycoordinate { get; }
-        CompassDirection CompassDirection { get; }
+        CompassDirection Direction { get; }
     }
 }

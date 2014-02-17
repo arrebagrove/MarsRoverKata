@@ -18,7 +18,7 @@ namespace MarsRover.Implementations
             get;
         }
 
-        public CompassDirection CompassDirection
+        public CompassDirection Direction
         {
             get;
         }
