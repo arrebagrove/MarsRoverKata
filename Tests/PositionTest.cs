@@ -13,6 +13,9 @@ namespace Tests
     [TestFixture]
     public class PositionTest
     {
+        [TestCase(0, 4, 'E', "0,4,E")]
+        [TestCase(1, 1, 'E', "1,1,E")]
+        [TestCase(0, 2, 'S', "0,2,S")]
         [TestCase(0,0,'N', "0,0,N")]
         public void PositionToStringFormat(int xCoordinate, int yCoordinate, char faceDirection, string expected)
         {
