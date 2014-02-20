@@ -19,7 +19,7 @@ namespace MarsRover.Implementations
 
         public override string ToString()
         {
-            return string.Format("{0},{1},{2}", Xcoordinate, Ycoordinate, Direction.ToString());
+            return string.Format("{0},{1},{2}", Xcoordinate, Ycoordinate, Direction.ToString()[0]);
         }
     }
 }
