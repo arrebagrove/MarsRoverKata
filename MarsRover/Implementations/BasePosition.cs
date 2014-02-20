@@ -8,7 +8,12 @@ namespace MarsRover.Implementations
 {
     public abstract class BasePosition : IPosition
     {
-        public BasePosition(int xCoordinate, int yCoordinate, CompassDirection direction)
+        public BasePosition(int xCoordinate, int yCoordinate, string direction)
+        {
+
+        }
+
+        public BasePosition(int xCoordinate, int yCoordinate, CompassDirection? direction)
         {
             _xCoordinate = xCoordinate;
             _yCoordinate = yCoordinate;
@@ -18,17 +23,23 @@ namespace MarsRover.Implementations
         protected int _xCoordinate;
         public int Xcoordinate
         {
-            get;
+            get
+            {
+                return _xCoordinate;
+            }
         }
 
         protected int _yCoordinate;
         public int Ycoordinate
         {
-            get;
+            get
+            {
+                return _yCoordinate;
+            }
         }
 
-        protected CompassDirection _direction;
-        public CompassDirection Direction
+        protected CompassDirection? _direction;
+        public CompassDirection? Direction
         {
             get
             {
@@ -36,6 +47,6 @@ namespace MarsRover.Implementations
             }
         }
 
-        public abstract override string ToString(); 
+        public abstract override string ToString();
     }
 }

@@ -8,7 +8,12 @@ namespace MarsRover.Implementations
 {
     public class Position : BasePosition, IPosition
     {
-        public Position(int xCoordinate, int yCoordinate, CompassDirection direction):base(xCoordinate,yCoordinate,direction)
+        public Position(int xCoordinate, int yCoordinate, string direction):base(xCoordinate, yCoordinate, direction)
+        {
+
+        }
+
+        public Position(int xCoordinate, int yCoordinate, CompassDirection? direction):base(xCoordinate,yCoordinate,direction)
         {
         }
 

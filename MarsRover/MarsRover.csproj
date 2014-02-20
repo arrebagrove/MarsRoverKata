@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MarsRover</RootNamespace>
     <AssemblyName>MarsRover</AssemblyName>
-    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -40,15 +41,22 @@
     <Compile Include="Common\CompassDirection.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Contracts\ICommand.cs" />
+    <Compile Include="Contracts\IRobotController.cs" />
     <Compile Include="Implementations\BasePosition.cs" />
     <Compile Include="Contracts\IPosition.cs" />
+    <Compile Include="Implementations\DirectionFactory.cs" />
+    <Compile Include="Implementations\Forward.cs" />
     <Compile Include="Implementations\Position.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Implementations\RobotController.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
