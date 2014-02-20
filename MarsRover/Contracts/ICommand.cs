@@ -7,5 +7,6 @@ namespace MarsRover.Contracts
 {
     public interface ICommand
     {
+        int CommandValue { get; }
     }
 }
