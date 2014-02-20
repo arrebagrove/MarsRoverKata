@@ -8,5 +8,15 @@ namespace MarsRover.Implementations
 {
     public class Forward : ICommand
     {
+        private readonly int _forwardsOrBackwards = 1;
+        
+        public int ForwardsOrBackwards
+        {
+            get
+            {
+                return _forwardsOrBackwards;
+            }
+        }
+
     }
 }
