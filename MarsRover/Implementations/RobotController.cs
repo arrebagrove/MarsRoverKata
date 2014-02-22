@@ -25,22 +25,22 @@ namespace MarsRover.Implementations
             //is degrees
             if (IsDegrees())
             {
-                RotateRobot();
+                TurnRobot();
             }
             else
             {
-                Move();
+                Drive();
             }
-            //is fwd or backwrds
+
             return _newPosition;
         }
 
-        private void RotateRobot()
+        private void TurnRobot()
         {
 
         }
 
-        private void Move()
+        private void Drive()
         {
             int x = _currentPosition.Xcoordinate + _command.CommandValue;
             _newPosition = new Position(x, _currentPosition.Ycoordinate, _currentPosition.Direction);
@@ -48,13 +48,13 @@ namespace MarsRover.Implementations
 
         private bool IsDegrees()
         {
-            if (_command.CommandValue != -1 || _command.CommandValue != 1)
+            if (_command.CommandValue == -1 || _command.CommandValue == 1)
             {
-                return true;
+                return false;
             }
             else
             {
-                return false;
+                return true;
             }
         }
     }

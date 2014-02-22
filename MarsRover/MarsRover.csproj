@@ -50,6 +50,7 @@
     <Compile Include="Implementations\Position.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Implementations\Right.cs" />
     <Compile Include="Implementations\RobotController.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
