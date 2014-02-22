@@ -7,8 +7,8 @@ namespace MarsRover.Common
     public enum CompassDirection
     {
         North = 0,
-        South = 1,
-        East = 2,
+        East = 1,
+        South = 2,
         West = 3
     }
 }

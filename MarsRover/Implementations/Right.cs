@@ -8,11 +8,13 @@ namespace MarsRover.Implementations
 {
     public class Right : ICommand
     {
+        private int _turnRightBy = 2;
+
         public int CommandValue
         {
             get
             {
-                return 0;
+                return _turnRightBy;
             }
         }
     }

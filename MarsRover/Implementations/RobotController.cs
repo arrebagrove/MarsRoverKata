@@ -23,7 +23,7 @@ namespace MarsRover.Implementations
             _command = command;
 
             //is degrees
-            if (IsDegrees())
+            if (IsTurnCommand())
             {
                 TurnRobot();
             }
@@ -37,7 +37,20 @@ namespace MarsRover.Implementations
 
         private void TurnRobot()
         {
+            if (_currentPosition.Direction.HasValue)
+            {
+                bool isLeftCommand = _command.CommandValue == -2;
+                bool isRightCommand = _command.CommandValue == 2;
 
+                int rotateValue = isLeftCommand ? -1 : isRightCommand ? 1 : 0;
+
+                int newDirectionValue = (int)_currentPosition.Direction.Value + rotateValue;
+
+                newDirectionValue = newDirectionValue < 0 ? 3 : newDirectionValue;
+
+                CompassDirection newDirection = (CompassDirection)newDirectionValue;
+                _newPosition = new Position(_currentPosition.Xcoordinate, _currentPosition.Ycoordinate, newDirection);
+            }
         }
 
         private void Drive()
@@ -46,7 +59,7 @@ namespace MarsRover.Implementations
             _newPosition = new Position(x, _currentPosition.Ycoordinate, _currentPosition.Direction);
         }
 
-        private bool IsDegrees()
+        private bool IsTurnCommand()
         {
             if (_command.CommandValue == -1 || _command.CommandValue == 1)
             {
