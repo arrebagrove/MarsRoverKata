@@ -13,6 +13,7 @@ namespace Tests
     [TestFixture]
     public class DriveTests
     {
+        [TestCase(3, 1, 'W', "2,1,W")]
         [TestCase(0,0,'N', "1,0,N")]
         public void ForwardByOne(int xCoordinate, int yCoordinate, char direction, string expected)
         {
