@@ -21,33 +21,10 @@ namespace MarsRover.Implementations
         public IPosition Move(ICommand command)
         {
             _command = command;
-
-            //is degrees
-            if (IsTurnCommand())
-            {
-                TurnRobot();
-            }
-            else
-            {
-                Drive();
-            }
+            
+            Drive();
 
             return _newPosition;
-        }
-
-        private void TurnRobot()
-        {
-            if (_currentPosition.Direction.HasValue)
-            {
-                bool isLeftCommand = _command.CommandValue == -2;
-                bool isRightCommand = _command.CommandValue == 2;
-
-                int rotateValue = isLeftCommand ? -1 : isRightCommand ? 1 : 0;
-
-                int newDirectionValue = (int)_currentPosition.Direction.Value + rotateValue;
-
-                newDirectionValue = RotateRobotWithNewDirectionValue(newDirectionValue);
-            }
         }
 
         private int RotateRobotWithNewDirectionValue(int newDirectionValue)
