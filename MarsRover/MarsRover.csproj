@@ -46,6 +46,7 @@
     <Compile Include="Contracts\IRotate.cs" />
     <Compile Include="Implementations\BasePosition.cs" />
     <Compile Include="Contracts\IPosition.cs" />
+    <Compile Include="Implementations\RotateRight.cs" />
     <Compile Include="Implementations\RotateLeft.cs" />
     <Compile Include="Implementations\Left.cs" />
     <Compile Include="Implementations\DirectionFactory.cs" />
