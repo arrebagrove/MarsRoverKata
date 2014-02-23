@@ -14,7 +14,7 @@ namespace Tests
     public class DriveTests
     {
         [TestCase(3, 1, 'W', "2,1,W")]
-        [TestCase(0,0,'N', "1,0,N")]
+        [TestCase(0,0,'N', "0,1,N")]
         public void ForwardByOne(int xCoordinate, int yCoordinate, char direction, string expected)
         {
             CompassDirection? compassDirection = new DirectionFactory().Get(direction);
@@ -30,7 +30,7 @@ namespace Tests
             Assert.That(robotEndPosition.ToString(), Is.EqualTo(expected));
         }
 
-        [TestCase(1, 0, 'N', "0,0,N")]
+        [TestCase(0, 0, 'N', "0,1,N")]
         public void ReverseByOne(int startingXCoordinate, int startingYCoordinate, char direction, string expected)
         {
             CompassDirection? compassDirection = new DirectionFactory().Get(direction);
