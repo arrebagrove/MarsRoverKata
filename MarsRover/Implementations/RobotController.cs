@@ -35,11 +35,6 @@ namespace MarsRover.Implementations
             return _newPosition;
         }
 
-        public IPosition Move(IRotate _rotateCommand)
-        {
-            return _newPosition;
-        }
-
         private void TurnRobot()
         {
             if (_currentPosition.Direction.HasValue)
@@ -51,11 +46,17 @@ namespace MarsRover.Implementations
 
                 int newDirectionValue = (int)_currentPosition.Direction.Value + rotateValue;
 
-                newDirectionValue = newDirectionValue < 0 ? 3 : newDirectionValue;
-
-                CompassDirection newDirection = (CompassDirection)newDirectionValue;
-                _newPosition = new Position(_currentPosition.Xcoordinate, _currentPosition.Ycoordinate, newDirection);
+                newDirectionValue = RotateRobotWithNewDirectionValue(newDirectionValue);
             }
+        }
+
+        private int RotateRobotWithNewDirectionValue(int newDirectionValue)
+        {
+            newDirectionValue = newDirectionValue < 0 ? 3 : newDirectionValue;
+
+            CompassDirection newDirection = (CompassDirection)newDirectionValue;
+            _newPosition = new Position(_currentPosition.Xcoordinate, _currentPosition.Ycoordinate, newDirection);
+            return newDirectionValue;
         }
 
         private void Drive()
@@ -73,6 +74,23 @@ namespace MarsRover.Implementations
             else
             {
                 return true;
+            }
+        }
+
+        public IPosition Move(IRotate _rotateCommand)
+        {
+            _command = (ICommand)_rotateCommand;
+            RotateRobot();
+            return _newPosition;
+        }
+
+        private void RotateRobot()
+        {
+            if (_currentPosition.Direction.HasValue)
+            {
+                int newDirectionValue = (int)_currentPosition.Direction.Value + _command.CommandValue;
+
+                newDirectionValue = RotateRobotWithNewDirectionValue(newDirectionValue);
             }
         }
     }
