@@ -47,12 +47,12 @@ namespace MarsRover.Implementations
 
         private void SetNewPositionForFacingNorthOrSouth()
         {
-            _newPosition = new Position(DriveCalculation(_currentPosition.Xcoordinate), _currentPosition.Ycoordinate, _currentPosition.Direction);
+            _newPosition = new Position(_currentPosition.Xcoordinate, DriveCalculation(_currentPosition.Ycoordinate), _currentPosition.Direction);
         }
 
         private void SetNewPositionForFacingEastOrWest()
         {
-            _newPosition = new Position(_currentPosition.Xcoordinate, DriveCalculation(_currentPosition.Ycoordinate), _currentPosition.Direction);
+            _newPosition = new Position(DriveCalculation(_currentPosition.Xcoordinate), _currentPosition.Ycoordinate, _currentPosition.Direction);
         }
 
         private int DriveCalculation(int valueToChange)
