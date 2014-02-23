@@ -14,6 +14,7 @@ namespace MarsRover.Implementations
         private ICommand _command;
         private int _xSize = 100;
         private int _ySize = 100;
+        private bool _useBitWise = false;
 
         public RobotController(IPosition position)
         {
@@ -23,7 +24,7 @@ namespace MarsRover.Implementations
         public IPosition Move(ICommand command)
         {
             _command = command;
-            
+
             Drive();
 
             return _newPosition;
@@ -34,10 +35,16 @@ namespace MarsRover.Implementations
             switch (_currentPosition.Direction)
             {
                 case CompassDirection.North:
+                    SetNewPositionForFacingNorthOrSouth();
+                    break;
                 case CompassDirection.South:
+                    _useBitWise = true;
                     SetNewPositionForFacingNorthOrSouth();
                     break;
                 case CompassDirection.East:
+                    _useBitWise = true;
+                    SetNewPositionForFacingEastOrWest();
+                    break;
                 case CompassDirection.West:
                     SetNewPositionForFacingEastOrWest();
                     break;
@@ -59,7 +66,8 @@ namespace MarsRover.Implementations
 
         private int DriveCalculation(int valueToChange, int circumference)
         {
-            valueToChange += _command.CommandValue;
+            int commandValue = _command.CommandValue;
+            valueToChange += _useBitWise ? ~commandValue + 1 : commandValue;
 
             if (valueToChange < 0)
             {
@@ -70,6 +78,7 @@ namespace MarsRover.Implementations
                 valueToChange = 0;
             }
 
+            _useBitWise = false;
             return valueToChange;
         }
 
