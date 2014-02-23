@@ -65,6 +65,10 @@ namespace MarsRover.Implementations
             {
                 valueToChange = circumference - 1;
             }
+            else if (valueToChange > circumference - 1)
+            {
+                valueToChange = 0;
+            }
 
             return valueToChange;
         }
