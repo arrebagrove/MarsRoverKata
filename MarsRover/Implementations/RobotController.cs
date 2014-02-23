@@ -29,8 +29,35 @@ namespace MarsRover.Implementations
 
         private void Drive()
         {
-            int x = _currentPosition.Xcoordinate + _command.CommandValue;
-            _newPosition = new Position(x, _currentPosition.Ycoordinate, _currentPosition.Direction);
+            switch (_currentPosition.Direction)
+            {
+                case CompassDirection.North:
+                case CompassDirection.South:
+                    SetNewPositionForFacingNorthOrSouth();
+                    break;
+                case CompassDirection.East:
+                case CompassDirection.West:
+                    SetNewPositionForFacingEastOrWest();
+                    break;
+                default:
+                    _newPosition = _currentPosition;
+                    break;
+            }
+        }
+
+        private void SetNewPositionForFacingNorthOrSouth()
+        {
+            _newPosition = new Position(DriveCalculation(_currentPosition.Xcoordinate), _currentPosition.Ycoordinate, _currentPosition.Direction);
+        }
+
+        private void SetNewPositionForFacingEastOrWest()
+        {
+            _newPosition = new Position(_currentPosition.Xcoordinate, DriveCalculation(_currentPosition.Ycoordinate), _currentPosition.Direction);
+        }
+
+        private int DriveCalculation(int valueToChange)
+        {
+            return valueToChange + _command.CommandValue;
         }
 
         public IPosition Move(IRotate _rotateCommand)
