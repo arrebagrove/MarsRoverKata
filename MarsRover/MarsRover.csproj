@@ -45,6 +45,7 @@
     <Compile Include="Contracts\IRobotController.cs" />
     <Compile Include="Implementations\BasePosition.cs" />
     <Compile Include="Contracts\IPosition.cs" />
+    <Compile Include="Implementations\Left.cs" />
     <Compile Include="Implementations\DirectionFactory.cs" />
     <Compile Include="Implementations\Forward.cs" />
     <Compile Include="Implementations\Position.cs">

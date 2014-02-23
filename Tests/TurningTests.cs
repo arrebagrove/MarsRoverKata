@@ -28,5 +28,21 @@ namespace Tests
 
             Assert.That(robotEndPosition.ToString(), Is.EqualTo(expected));
         }
+
+        [TestCase(0, 0, 'N', "0,0,W")]
+        public void MoveLeft(int xCoordinate, int yCoordinate, char direction, string expected)
+        {
+            CompassDirection? compassDirection = new DirectionFactory().Get(direction);
+
+            IPosition robotStartPosition = new Position(xCoordinate, yCoordinate, compassDirection);
+
+            IRobotController robotController = new RobotController(robotStartPosition);
+
+            ICommand robotCommand = new Left();
+
+            IPosition robotEndPosition = robotController.Move(robotCommand);
+
+            Assert.That(robotEndPosition.ToString(), Is.EqualTo(expected));
+        }
     }
 }
