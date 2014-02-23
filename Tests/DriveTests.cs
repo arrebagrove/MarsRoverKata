@@ -30,7 +30,7 @@ namespace Tests
             Assert.That(robotEndPosition.ToString(), Is.EqualTo(expected));
         }
 
-        [TestCase(0, 0, 'N', "0,1,N")]
+        [TestCase(0, 0, 'N', "0,99,N")]
         public void ReverseByOne(int startingXCoordinate, int startingYCoordinate, char direction, string expected)
         {
             CompassDirection? compassDirection = new DirectionFactory().Get(direction);
