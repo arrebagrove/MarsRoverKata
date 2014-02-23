@@ -14,7 +14,7 @@ namespace Tests
     public class TurningTests
     {
         [TestCase(0, 0, 'N', "0,0,E")]
-        public void MoveRight(int xCoordinate, int yCoordinate, char direction, string expected)
+        public void RotateRight(int xCoordinate, int yCoordinate, char direction, string expected)
         {
             CompassDirection? compassDirection = new DirectionFactory().Get(direction);
 
@@ -30,7 +30,7 @@ namespace Tests
         }
 
         [TestCase(0, 0, 'N', "0,0,W")]
-        public void MoveLeft(int xCoordinate, int yCoordinate, char direction, string expected)
+        public void RotateLeft(int xCoordinate, int yCoordinate, char direction, string expected)
         {
             CompassDirection? compassDirection = new DirectionFactory().Get(direction);
 
