@@ -14,6 +14,7 @@ namespace Tests
     public class DriveTests
     {
         [TestCase(3, 1, 'W', "4,1,W")]
+        [TestCase(99, 1, 'W', "0,1,W")]
         [TestCase(0,0,'N', "0,1,N")]
         public void ForwardByOne(int startingXCoordinate, int startingYCoordinate, char direction, string expected)
         {
