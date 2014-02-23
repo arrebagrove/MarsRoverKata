@@ -13,9 +13,12 @@ namespace Tests
     [TestFixture]
     public class DriveTests
     {
+        [TestCase(0, 0, 'N', "0,1,N")]
+        [TestCase(0, 99, 'N', "0,0,N")]
+        [TestCase(0, 0, 'S', "0,99,S")]
+        [TestCase(85, 85, 'S', "85,86,S")]
         [TestCase(3, 1, 'W', "4,1,W")]
         [TestCase(99, 1, 'W', "0,1,W")]
-        [TestCase(0,0,'N', "0,1,N")]
         public void ForwardByOne(int startingXCoordinate, int startingYCoordinate, char direction, string expected)
         {
             CompassDirection? compassDirection = new DirectionFactory().Get(direction);
