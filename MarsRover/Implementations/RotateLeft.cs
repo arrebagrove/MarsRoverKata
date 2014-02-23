@@ -6,9 +6,9 @@ using System.Text;
 
 namespace MarsRover.Implementations
 {
-    public class Left : ICommand
+    public class RotateLeft : ICommand, IRotate
     {
-        private int _turnLeftBy = -2;
+        private int _turnLeftBy = -1;
 
         public int CommandValue
         {

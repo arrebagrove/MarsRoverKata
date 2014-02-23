@@ -54,7 +54,7 @@ namespace Tests
 
             IRobotController robotController = new RobotController(robotStartPosition);
 
-            IRotate robotCommand = new Left();
+            IRotate robotCommand = new RotateLeft();
 
             IPosition robotEndPosition = robotController.Move(robotCommand);
 
