@@ -35,6 +35,11 @@ namespace MarsRover.Implementations
             return _newPosition;
         }
 
+        public IPosition Move(IRotate _rotateCommand)
+        {
+            return _newPosition;
+        }
+
         private void TurnRobot()
         {
             if (_currentPosition.Direction.HasValue)

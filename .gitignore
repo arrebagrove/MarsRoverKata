@@ -4,3 +4,5 @@ MarsRover/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
 */bin/*
 MarsRover.v11.suo
 MarsRover/obj/Debug/
+TestResults/MarsRover.TE.Tests.mdf
+TestResults/MarsRover.TE.Tests_log.ldf

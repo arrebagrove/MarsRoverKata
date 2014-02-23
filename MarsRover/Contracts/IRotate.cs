@@ -5,9 +5,8 @@ using System.Text;
 
 namespace MarsRover.Contracts
 {
-    public interface IRobotController
+    public interface IRotate
     {
-        IPosition Move(ICommand command);
-        IPosition Move(IRotate rotateCommand);
+        int CommandValue { get; }
     }
 }
