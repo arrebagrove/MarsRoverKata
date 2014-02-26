@@ -20,7 +20,8 @@ namespace MarsRover.Implementations
             foreach (char command in queueOfCommands)
             {
                 ICommand commandToRun = new CommandFactory().Get(command);
-                yield return new Position(0, 0, CompassDirection.North);
+
+                yield return _robotController.Move(commandToRun);
             }
         }
     }
