@@ -19,6 +19,7 @@ namespace Tests
         [TestCase(85, 85, 'S', "85,84,S")]        
         [TestCase(99, 1, 'W', "0,1,W")]
         [TestCase(3, 1, 'W', "4,1,W")]
+        [TestCase(0,1,'E', "1,1,E")]
         public void ForwardByOne(int startingXCoordinate, int startingYCoordinate, char direction, string expected)
         {
             CompassDirection? compassDirection = new DirectionFactory().Get(direction);
