@@ -27,7 +27,8 @@ namespace MarsRover.Implementations
 
             Drive();
 
-            return _newPosition;
+            _currentPosition = _newPosition;
+            return _currentPosition;
         }
 
         private void Drive()
@@ -86,7 +87,8 @@ namespace MarsRover.Implementations
         {
             _command = (ICommand)_rotateCommand;
             RotateRobot();
-            return _newPosition;
+            _currentPosition = _newPosition;
+            return _currentPosition;
         }
 
         private void RotateRobot()
