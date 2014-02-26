@@ -30,6 +30,9 @@ namespace Tests
 
         }
 
+        [TestCase('F', "Forward")]
+        [TestCase('B', "Reverse")]
+        [TestCase('L', "RotateLeft")]
         [TestCase('R', "RotateRight")]
         public void GetCommandFromFactory(char commandType, string expectedCommand)
         {

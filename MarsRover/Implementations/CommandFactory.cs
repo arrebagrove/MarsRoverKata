@@ -10,7 +10,19 @@ namespace MarsRover.Implementations
     {
         public ICommand Get(char command)
         {
-            return new NullCommand();
+            switch (command)
+            {
+                case 'F' :
+                    return new Forward();
+                case 'B' :
+                    return new Reverse();
+                case 'R' :
+                    return new RotateRight();
+                case 'L' :
+                    return new RotateLeft();
+                default:
+                    return new NullCommand();
+            }
         }
     }
 }
