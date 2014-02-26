@@ -43,10 +43,12 @@
     </Compile>
     <Compile Include="Contracts\ICommand.cs" />
     <Compile Include="Contracts\IRobotController.cs" />
+    <Compile Include="Contracts\IRobotQueueCommandRunner.cs" />
     <Compile Include="Contracts\IRotate.cs" />
     <Compile Include="Implementations\BasePosition.cs" />
     <Compile Include="Contracts\IPosition.cs" />
     <Compile Include="Implementations\Reverse.cs" />
+    <Compile Include="Implementations\RobotQueueCommandRunner.cs" />
     <Compile Include="Implementations\RotateRight.cs" />
     <Compile Include="Implementations\RotateLeft.cs" />
     <Compile Include="Implementations\Left.cs" />
