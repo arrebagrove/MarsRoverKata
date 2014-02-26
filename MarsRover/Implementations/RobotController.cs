@@ -101,7 +101,7 @@ namespace MarsRover.Implementations
 
         private int RotateRobotWithNewDirectionValue(int newDirectionValue)
         {
-            newDirectionValue = newDirectionValue < 0 ? 3 : newDirectionValue;
+            newDirectionValue = newDirectionValue < 0 ? 3 : newDirectionValue > 3 ? 0 : newDirectionValue;
 
             CompassDirection newDirection = (CompassDirection)newDirectionValue;
             _newPosition = new Position(_currentPosition.Xcoordinate, _currentPosition.Ycoordinate, newDirection);
