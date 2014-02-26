@@ -1,4 +1,5 @@
-﻿using MarsRover.Contracts;
+﻿using MarsRover.Common;
+using MarsRover.Contracts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +17,11 @@ namespace MarsRover.Implementations
         }
         public IEnumerable<IPosition> Run(string queueOfCommands)
         {
-            return new List<IPosition>();
+            foreach (char command in queueOfCommands)
+            {
+                ICommand commandToRun = new CommandFactory().Get(command);
+                yield return new Position(0, 0, CompassDirection.North);
+            }
         }
     }
 }

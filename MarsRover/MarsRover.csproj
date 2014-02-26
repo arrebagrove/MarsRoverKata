@@ -47,17 +47,17 @@
     <Compile Include="Contracts\IRotate.cs" />
     <Compile Include="Implementations\BasePosition.cs" />
     <Compile Include="Contracts\IPosition.cs" />
+    <Compile Include="Implementations\CommandFactory.cs" />
+    <Compile Include="Implementations\NullCommand.cs" />
     <Compile Include="Implementations\Reverse.cs" />
     <Compile Include="Implementations\RobotQueueCommandRunner.cs" />
     <Compile Include="Implementations\RotateRight.cs" />
     <Compile Include="Implementations\RotateLeft.cs" />
-    <Compile Include="Implementations\Left.cs" />
     <Compile Include="Implementations\DirectionFactory.cs" />
     <Compile Include="Implementations\Forward.cs" />
     <Compile Include="Implementations\Position.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Implementations\Right.cs" />
     <Compile Include="Implementations\RobotController.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -6,15 +6,13 @@ using System.Text;
 
 namespace MarsRover.Implementations
 {
-    public class Right : ICommand
+    public class NullCommand : ICommand
     {
-        private int _turnRightBy = 2;
-
         public int CommandValue
         {
             get
             {
-                return _turnRightBy;
+                return 0;
             }
         }
     }

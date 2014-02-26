@@ -29,5 +29,15 @@ namespace Tests
             Assert.That(robotPath.LastOrDefault().ToString(), Is.EqualTo(expectedEndPosition));
 
         }
+
+        [TestCase('R', "RotateRight")]
+        public void GetCommandFromFactory(char commandType, string expectedCommand)
+        {
+            ICommand command = new CommandFactory().Get(commandType);
+
+            string commandName = command.GetType().Name;
+
+            Assert.That(commandName, Is.EqualTo(expectedCommand));
+        }
     }
 }
