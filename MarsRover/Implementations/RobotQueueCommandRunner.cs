@@ -21,7 +21,15 @@ namespace MarsRover.Implementations
             {
                 ICommand commandToRun = new CommandFactory().Get(command);
 
-                yield return _robotController.Move(commandToRun);
+                if (commandToRun is IRotate)
+                {
+                    IRotate rotateCommand = (IRotate)commandToRun;
+                    yield return _robotController.Move(rotateCommand);
+                }
+                else
+                {
+                    yield return _robotController.Move(commandToRun);
+                }
             }
         }
     }
