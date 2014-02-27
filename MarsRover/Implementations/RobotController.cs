@@ -46,7 +46,7 @@ namespace MarsRover.Implementations
                     SetNewPositionForFacingEastOrWest();
                     break;
                 case CompassDirection.West:
-                    //_useBitWise = true;
+                    _useBitWise = true;
                     SetNewPositionForFacingEastOrWest();
                     break;
                 default:

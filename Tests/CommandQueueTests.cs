@@ -19,6 +19,8 @@ namespace Tests
         [TestCase(0, 0, 'N', "FRL", "0,1,N")]
         [TestCase(0, 0, 'N', "FRLR", "0,1,E")]
         [TestCase(0, 0, 'N', "FRLRF", "1,1,E")]
+        [TestCase(0, 0, 'W', "FFL", "98,0,S")]
+        [TestCase(0, 0, 'W', "FFLFF", "98,98,S")]
         public void FollowEachCommandInCommandQueue(int startXcoordinate, int startYCoordiate, char startFacingDirectionFirstLetter, string queueOfCommands, string expectedEndPosition)
         {
             CompassDirection? startFacingDirection = new DirectionFactory().Get(startFacingDirectionFirstLetter);

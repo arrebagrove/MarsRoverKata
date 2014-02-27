@@ -8,7 +8,7 @@ namespace MarsRover.Implementations
     public class DirectionFactory
     {
         public CompassDirection? Get(char firstLetter)
-        {
+       {
             switch (firstLetter)
             {
                 case 'N':

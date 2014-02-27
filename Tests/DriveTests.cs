@@ -17,9 +17,10 @@ namespace Tests
         [TestCase(0, 99, 'N', "0,0,N")]
         [TestCase(0, 0, 'S', "0,99,S")]
         [TestCase(85, 85, 'S', "85,84,S")]        
-        [TestCase(99, 1, 'W', "0,1,W")]
-        [TestCase(3, 1, 'W', "4,1,W")]
+        [TestCase(99, 1, 'W', "98,1,W")]
+        [TestCase(3, 1, 'W', "2,1,W")]
         [TestCase(0,1,'E', "1,1,E")]
+        [TestCase(0, 0, 'W', "99,0,W")]
         public void ForwardByOne(int startingXCoordinate, int startingYCoordinate, char direction, string expected)
         {
             CompassDirection? compassDirection = new DirectionFactory().Get(direction);
@@ -35,6 +36,7 @@ namespace Tests
             Assert.That(robotEndPosition.ToString(), Is.EqualTo(expected));
         }
 
+        [TestCase(98,42,'S',"98,43,S")]
         [TestCase(0, 0, 'N', "0,99,N")]
         public void ReverseByOne(int startingXCoordinate, int startingYCoordinate, char direction, string expected)
         {
