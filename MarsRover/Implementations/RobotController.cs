@@ -12,13 +12,29 @@ namespace MarsRover.Implementations
         private IPosition _currentPosition;
         private IPosition _newPosition;
         private ICommand _command;
+        private IPlanet _planet;
         private int _xSize = 100;
         private int _ySize = 100;
         private bool _useBitWise = false;
 
+        private bool _collision = false;
+        public bool Collision
+        {
+            get 
+            {
+                return _collision;
+            }
+        }
+
         public RobotController(IPosition position)
         {
             _currentPosition = position;
+        }
+
+        public RobotController(IPosition position, IPlanet planet)
+        {
+            _currentPosition = position;
+            _planet = planet;
         }
 
         public IPosition Move(ICommand command)
@@ -109,6 +125,5 @@ namespace MarsRover.Implementations
             _newPosition = new Position(_currentPosition.Xcoordinate, _currentPosition.Ycoordinate, newDirection);
             return newDirectionValue;
         }
-
     }
 }

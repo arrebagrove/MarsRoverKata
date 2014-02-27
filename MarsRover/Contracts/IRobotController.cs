@@ -7,6 +7,7 @@ namespace MarsRover.Contracts
 {
     public interface IRobotController
     {
+        bool Collision { get; }
         IPosition Move(ICommand command);
         IPosition Move(IRotate rotateCommand);
     }

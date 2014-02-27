@@ -42,6 +42,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Contracts\ICommand.cs" />
+    <Compile Include="Contracts\IPlanet.cs" />
     <Compile Include="Contracts\IRobotController.cs" />
     <Compile Include="Contracts\IRobotQueueCommandRunner.cs" />
     <Compile Include="Contracts\IRotate.cs" />
@@ -49,6 +50,7 @@
     <Compile Include="Contracts\IPosition.cs" />
     <Compile Include="Implementations\CommandFactory.cs" />
     <Compile Include="Implementations\NullCommand.cs" />
+    <Compile Include="Implementations\Planet.cs" />
     <Compile Include="Implementations\Reverse.cs" />
     <Compile Include="Implementations\RobotQueueCommandRunner.cs" />
     <Compile Include="Implementations\RotateRight.cs" />
