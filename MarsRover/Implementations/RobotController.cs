@@ -44,7 +44,18 @@ namespace MarsRover.Implementations
             Drive();
 
             _currentPosition = _newPosition;
+
+            DetectCollisions();
             return _currentPosition;
+        }
+
+        private void DetectCollisions()
+        {
+            if (_planet != null)
+            {
+                IEnumerable<IPosition> collisions = _planet.ObjectsOnMap.Select(o => o).Where(o => o.ToString().Equals(_currentPosition.ToString()));
+                _collision = collisions.Any();
+            }
         }
 
         private void Drive()
@@ -102,8 +113,12 @@ namespace MarsRover.Implementations
         public IPosition Move(IRotate _rotateCommand)
         {
             _command = (ICommand)_rotateCommand;
+            
             RotateRobot();
+
             _currentPosition = _newPosition;
+
+            DetectCollisions();
             return _currentPosition;
         }
 

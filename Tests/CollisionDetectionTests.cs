@@ -33,7 +33,7 @@ namespace Tests
             IPosition endPosition = controller.Move(new Forward());
 
             Assert.True(controller.Collision);
-            Assert.That(endPosition.ToString(), Is.EqualTo(objectsOnMap.FirstOrDefault()));
+            Assert.That(endPosition.ToString(), Is.EqualTo(objectsOnMap.FirstOrDefault().ToString()));
         }
     }
 }
