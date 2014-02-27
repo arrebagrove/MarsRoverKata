@@ -36,6 +36,8 @@ namespace Tests
             Assert.That(robotEndPosition.ToString(), Is.EqualTo(expected));
         }
 
+        [TestCase(32,12,'W', "33,12,W")]
+        [TestCase(64,99,'E', "63,99,E")]
         [TestCase(98,42,'S',"98,43,S")]
         [TestCase(0, 0, 'N', "0,99,N")]
         public void ReverseByOne(int startingXCoordinate, int startingYCoordinate, char direction, string expected)
