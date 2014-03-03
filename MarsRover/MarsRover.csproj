@@ -51,6 +51,7 @@
     <Compile Include="Implementations\CommandFactory.cs" />
     <Compile Include="Implementations\NullCommand.cs" />
     <Compile Include="Implementations\Planet.cs" />
+    <Compile Include="Implementations\Planets.cs" />
     <Compile Include="Implementations\Reverse.cs" />
     <Compile Include="Implementations\RobotQueueCommandRunner.cs" />
     <Compile Include="Implementations\RotateRight.cs" />

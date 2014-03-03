@@ -13,8 +13,6 @@ namespace MarsRover.Implementations
         private IPosition _newPosition;
         private ICommand _command;
         private IPlanet _planet;
-        private int _xSize = 100;
-        private int _ySize = 100;
         private bool _useBitWise = false;
 
         private bool _collision = false;
@@ -29,6 +27,7 @@ namespace MarsRover.Implementations
         public RobotController(IPosition position)
         {
             _currentPosition = position;
+            _planet = new Planets().Jupiter;
         }
 
         public RobotController(IPosition position, IPlanet planet)
@@ -84,12 +83,12 @@ namespace MarsRover.Implementations
 
         private void SetNewPositionForFacingNorthOrSouth()
         {
-            _newPosition = new Position(_currentPosition.Xcoordinate, DriveCalculation(_currentPosition.Ycoordinate, _ySize), _currentPosition.Direction);
+            _newPosition = new Position(_currentPosition.Xcoordinate, DriveCalculation(_currentPosition.Ycoordinate, _planet.Ysize), _currentPosition.Direction);
         }
 
         private void SetNewPositionForFacingEastOrWest()
         {
-            _newPosition = new Position(DriveCalculation(_currentPosition.Xcoordinate, _xSize), _currentPosition.Ycoordinate, _currentPosition.Direction);
+            _newPosition = new Position(DriveCalculation(_currentPosition.Xcoordinate, _planet.Xsize), _currentPosition.Ycoordinate, _currentPosition.Direction);
         }
 
         private int DriveCalculation(int valueToChange, int circumference)
